@@ -6,6 +6,10 @@
   justify-content: flex-end;
 }
 
+.label {
+  display: none;
+}
+
 .input {
   @include appearance-none;
   flex-grow: 1;
