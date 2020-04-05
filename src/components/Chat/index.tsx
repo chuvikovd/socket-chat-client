@@ -27,6 +27,17 @@ export default () => {
     []
   )
 
+  const getMessageFromReason = (reason: string) => {
+    switch (reason) {
+      case 'timeout':
+        return 'Disconnected from server due to inactivity'
+      case 'shutdown':
+        return 'Server has been shut down'
+      default:
+        return null
+    }
+  }
+
   useEffect(() => {
     const ws = new WebSocket(
       `ws://${process.env.REACT_APP_API_URL}?username=${username}`
@@ -36,10 +47,12 @@ export default () => {
     ws.onmessage = onMessage
 
     ws.onclose = ({ reason }) => {
-      if (reason === 'timeout')
+      const message = getMessageFromReason(reason)
+
+      if (message)
         addNotification({
           type: 'error',
-          message: 'Disconnected from server due to inactivity ',
+          message,
         })
 
       history.push('/')
