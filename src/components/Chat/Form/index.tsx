@@ -25,7 +25,9 @@ const Form: React.FC<FormProps> = ({ onSubmit }) => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
+      <label htmlFor="message">Message</label>
       <input
+        id="message"
         className={styles.input}
         value={message}
         onChange={handleMessageChange}
