@@ -1,0 +1,40 @@
+$green: #4c9d6c;
+$yellow: #feeb58;
+$red: #a43737;
+$grey: #333;
+$light-grey: #777;
+$extra-light-grey: #f7f7f7;
+
+$chat-form-height: 50px;
+
+@mixin shadowed-box {
+  background: white;
+  box-shadow: 0 10px 20px 5px rgba(0,0,0,0.2);
+  margin: auto;
+}
+
+@mixin appearance-none {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+}
+
+@mixin common-button {
+  @include appearance-none;
+  display: block;
+  background: $yellow;
+  font-weight: 700;
+  color: $grey;
+  padding: 1rem;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
+    background: lighten($yellow, 5%);
+  }
+}

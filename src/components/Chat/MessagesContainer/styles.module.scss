@@ -1,0 +1,17 @@
+@import '../../../resources.scss';
+
+.wrapper {
+  flex-grow: 1;
+  overflow-y: scroll;
+  height: calc(100% - #{$chat-form-height});
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  padding: 1rem;
+  min-height: 100%;
+  background: $extra-light-grey;
+}

@@ -1,0 +1,18 @@
+@import '../../../resources.scss';
+
+.form {
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input {
+  @include appearance-none;
+  flex-grow: 1;
+  padding: 0.5rem 1rem;
+}
+
+.button {
+  width: 100px;
+  @include common-button;
+}

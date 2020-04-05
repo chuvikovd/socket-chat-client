@@ -1,0 +1,26 @@
+@import '../../resources.scss';
+
+.wrapper {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.chat {
+  @include shadowed-box;
+  width: 100%;
+  height: 80vh;
+}
+
+.exit {
+  @include appearance-none;
+  align-self: flex-end;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}

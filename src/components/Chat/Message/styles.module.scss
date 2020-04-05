@@ -1,0 +1,25 @@
+@import '../../../resources.scss';
+
+.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  width: 80%;
+  padding: 0.5rem;
+  background: white;
+}
+
+.self {
+  align-self: flex-end;
+}
+
+.author {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.info {
+  font-weight: 100;
+}

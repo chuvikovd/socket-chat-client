@@ -1,0 +1,29 @@
+@import '../../resources.scss';
+
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.notification {
+  @include shadowed-box;
+  width: 220px;
+  margin: 0 0 0.5rem;
+  color: white;
+  padding: 1rem;
+  font-weight: 700;
+}
+
+.success {
+  background: $green;
+}
+
+.error {
+  background: $red;
+}

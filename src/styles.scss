@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #c7b2f3;
+  background: -moz-linear-gradient(
+    -45deg,
+    #c7b2f3 0%,
+    #c7b2f3 59.99%,
+    #a996cf 60%,
+    #a996cf 100%
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    #c7b2f3 0%,
+    #c7b2f3 59.99%,
+    #a996cf 60%,
+    #a996cf 100%
+  );
+  background: linear-gradient(
+    135deg,
+    #c7b2f3 0%,
+    #c7b2f3 59.99%,
+    #a996cf 60%,
+    #a996cf 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7b2f3', endColorstr='#a996cf',GradientType=1 );
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}

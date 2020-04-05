@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useMemo } from 'react'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import Notifications from './components/Notifications'
+import Landing from './components/Landing'
+import Chat from './components/Chat'
+import { Provider } from './context'
 
 function App() {
+  const [username, setUsername] = useState('')
+
+  const value = useMemo(() => ({ username }), [username])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Notifications>
+      <Provider value={value}>
+        <BrowserRouter>
+          <Switch>
+            <Route
+              path="/chat"
+              render={() => {
+                if (!username) return <Redirect to="/" />
+
+                return <Chat />
+              }}
+            />
+            <Route
+              path="*"
+              render={() => <Landing setUsername={setUsername} />}
+            />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
+    </Notifications>
+  )
 }
 
-export default App;
+export default App
